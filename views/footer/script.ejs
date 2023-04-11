@@ -1,0 +1,161 @@
+    <!-- jQuery -->
+    <script src="/assets/js/jquery/jquery.min.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap/bootstrap-select.min.js"></script>
+
+    <!-- Sweetalert Library -->
+    <script src="/assets/js/sweetalert2/sweetalert2.all.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="/assets/js/datatables/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- <script src="/assets/js/datatables/dataTables.buttons.min.js"></script> -->
+    <script src="/assets/js/datatables/dataTables.responsive.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <!-- <script src="/assets/js/owlcarousel/owl.carousel.min.js"></script> -->
+
+    <!-- Chartjs -->
+    <script src="/assets/js/chartjs/chart.bundle.min.js"></script>
+
+    <!-- Get Content -->
+    <script src="/assets/js/core/content/get_content.js"></script>
+
+    <!-- Core -->
+    <!-- Read Content -->
+    <script src="/assets/js/core/content/read_content.js"></script>
+
+    <!-- Notifikasi -->
+    <script src="/assets/js/core/notif/index.js"></script>
+
+    <!-- Berita -->
+    <script src="/assets/js/core/carousel/berita/index.js"></script>
+    <script src="/assets/js/core/blog/berita/index.js"></script>
+
+    <!-- Latihan -->
+    <script src="/assets/js/core/latihan/list.js"></script>
+    <script src="/assets/js/core/latihan/index.js"></script>
+    <script src="/assets/js/core/latihan/result.js"></script>
+    <script src="/assets/js/core/latihan/pembahasan.js"></script>
+
+    <!-- Tryout -->
+    <script src="/assets/js/core/tryout/list.js"></script>
+    <script src="/assets/js/core/tryout/index.js"></script>
+    <script src="/assets/js/core/tryout/result.js"></script>
+    <script src="/assets/js/core/tryout/pembahasan.js"></script>
+    <script src="/assets/js/core/tryout/history.js"></script>
+
+    <!-- Dailynotes -->
+    <script src="/assets/js/core/dailynotes/index.js"></script>
+
+    <!-- Shop -->
+    <script src="/assets/js/core/shop/index.js"></script>
+
+    <!-- Chart -->
+    <!-- <script src="/assets/js/chart/statistic/index.js"></script> -->
+    <script src="/assets/js/core/statistic/index.js"></script>
+
+    <!-- Modals -->
+    <!-- Shop -->
+    <script src="/assets/js/modals/shop/paket.js"></script>
+    <script src="/assets/js/modals/shop/order.js"></script>
+    <script src="/assets/js/modals/shop/konfirmasi.js"></script>
+
+    <!-- Book -->
+    <script src="/assets/js/modals/book/details.js"></script>
+    <script src="/assets/js/modals/book/konfirmasi.js"></script>
+    <script src="/assets/js/modals/book/buy.js"></script>
+
+    <!-- Video -->
+    <script src="/assets/js/modals/video/materi.js"></script>
+
+    <!-- Latihan -->
+    <script src="/assets/js/modals/latihan/konfirmasi.js"></script>
+
+    <!-- Try out -->
+    <script src="/assets/js/modals/tryout/konfirmasi.js"></script>
+
+    <!-- Notif -->
+    <script src="/assets/js/modals//notifikasi/index.js"></script>
+
+    <!-- Core theme JS-->
+    <!-- <script src="/assets/js/scripts.js"></script> -->
+
+    <script>
+        $(document).ready(function() {
+            $("#carouselMenuHome").carousel()
+            
+            $('#promoCarousel').carousel({
+                interval: 5000
+            })
+
+            $('#carouselBerita').carousel({
+                interval: 5000
+            })
+
+            let items = document.querySelectorAll('.carousel2 .carousel-item')
+
+            items.forEach((el) => {
+                const minPerSlide = 4
+                let next = el.nextElementSibling
+                for (var i=1; i<minPerSlide; i++) {
+                    if (!next) {
+                        next = items[0]
+                    }
+                    let cloneChild = next.cloneNode(true)
+                    el.appendChild(cloneChild.children[0])
+                    next = next.nextElementSibling
+                }
+            })
+
+
+            $('#tableUniv').DataTable({
+                dom: 'frtip',
+                language: {
+                    searchPlaceholder: "Cari kampus di sini...",
+                    "emptyTable": "Tidak ada data"
+                }
+            })
+
+            $('#tableJurusan').DataTable({
+                dom: 'frtip',
+                language: {
+                    searchPlaceholder: "Cari jurusan di sini...",
+                    "emptyTable": "Tidak ada data"
+                }
+            })
+
+            $('#tableNotif').DataTable({
+                dom: 'frtip',
+                language: {
+                    searchPlaceholder: "Cari notifikasi di sini...",
+                    "emptyTable": "Tidak ada data"
+                }
+            })
+
+            $('#tablePeringkat').DataTable({
+                dom: 'frtip',
+                language: {
+                    searchPlaceholder: "Masukkan nama peserta...",
+                    "emptyTable": "Tidak ada data"
+                }
+            })
+
+            $('#tableHistory').DataTable({
+                dom: 'frtip',
+                language: {
+                    searchPlaceholder: "Masukkan history...",
+                    "emptyTable": "Tidak ada data"
+                }
+            })
+
+            var vids = $("video") 
+                $.each(vids, function(){
+                this.controls = false
+            })
+        })
+    </script>
+</body>
+</html>

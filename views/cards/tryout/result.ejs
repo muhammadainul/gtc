@@ -1,0 +1,30 @@
+<div class="col-lg-12 mt-5 mb-5">
+    <div class="d-flex flex-row justify-content-between w-100">
+        <div class="p-1">
+            <a id="backTryoutTest" style="cursor: pointer;">
+                <img width="40px" src="/assets/images/icon/31. left.png">
+                <span class="text-warning">KEMBALI</span>
+            </a>
+        </div>
+        <div class="p-2 col-title mx-auto">
+            <h5 class="text-brown text-center">TRY OUT</h5>
+        </div>
+        <div class="p-1 col-player-name">
+            <span class="text-white text-upper text-center">
+                <%= typeof session.username != undefined ? session.username : '' %>
+            </span>
+        </div> 
+    </div>
+    <div class="container mt-5">
+        <div class="row box-white" id="resultTryout">
+            
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-12">
+                <div class="p-3 col-title text-center float-right">
+                    <a class="text-white text-bold text-decoration-none" href="/peringkat">LIHAT RANKING</a>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>

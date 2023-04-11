@@ -1,0 +1,10 @@
+<div class="col-lg-8 box-white mt-5 mb-5">
+    <select class="form-control" data-live-search="true" id="changeHistory">
+        <% result.forEach(row => { %>
+            <option value="<%= row._id %>"><%= row.nama %></option>
+        <% }) %>
+    </select>
+    <div class="d-flex flex-row flex-wrap mt-5">
+        <table class="table table-responsive table-borderless" id="tableHistory"></table>
+    </div>
+</div>

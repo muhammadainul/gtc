@@ -1,0 +1,48 @@
+<%- include('../../navigation/header') %>
+
+    <div class="wrapper-content-home" id="listTryoutPage">
+        <section class="bg-transparent">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <%- include('../../cards/tryout/detail') %>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <%- include('../../cards/home/home-menu-bottom') %>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrapper-content-home d-none" id="startSoalTryout">
+        <section class="bg-transparent">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <%- include('../../cards/tryout/list-soal') %>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrapper-content-home d-none" id="resultSoalTryout">
+        <section class="bg-transparent">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <%- include('../../cards/tryout/result') %>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrapper-content-home d-none" id="pembahasanTryout">
+        <section class="bg-transparent">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <%- include('../../cards/tryout/pembahasan') %>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <%- include('../../footer/index') %>

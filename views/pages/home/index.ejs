@@ -1,0 +1,62 @@
+<%- include('../../navigation/header') %>
+
+    <% if (session) { %> 
+        <div class="wrapper-content-home">
+            <section class="bg-transparent">
+                <div class="container">
+                    <div class="row">
+                        <%- include('../../cards/home/home-menu-top') %>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <%- include('../../cards/home/home-menu-bottom') %>
+                    </div>
+                </div>
+            </section>
+        </div>
+    <% } else { %>
+        <!-- Premium Shop -->
+        <section class="bg-light py-2" id="features">
+            <div class="container">
+                <div class="row mx-auto">
+                    <div class="p-2 col-title-shop text-center">
+                        <h5 class="text-danger">PREMIUM SHOP</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-5 my-5">
+                <%- include('../../cards/home/premium-shop/index') %>
+            </div>
+        </section>
+
+        <!-- Info & Promo -->
+        <section class="bg-light py-2">
+            <div class="container">
+                <div class="row mx-auto">
+                    <div class="p-2 col-title-shop text-secondary text-center">
+                        <h5 class="">INFO & PROMO</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-5 my-5">
+                <%- include('../../cards/home/info-promo/index') %>
+            </div>
+        </section>
+
+        <!-- Berita -->
+        <section class="bg-light py-2">
+            <div class="container">
+                <div class="row mx-auto">
+                    <div class="p-2 col-title-shop text-dark text-center">
+                        <h5 class="">BERITA</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-5 my-5 px-5">
+                <%- include('../../cards/home/berita/index') %>
+            </div>
+        </section>
+    <% } %>
+
+<%- include('../../footer/index') %>

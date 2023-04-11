@@ -1,0 +1,61 @@
+<div class="text-center mb-5">
+    <!-- <h2 class="fw-bolder">Pay as you grow</h2>
+    <p class="lead mb-0">With our no hassle pricing plans</p> -->
+</div>
+<div class="row mx-auto my-auto justify-content-center">
+    <div id="promoCarousel" class="carousel carousel2 slide" data-bs-ride="carousel2">
+        <div class="carousel-inner-group" role="listbox">
+            <% if (promoData != undefined && promoData != null) { %>
+                <% var counter = 1 %>
+                <% promoData.forEach(data => { %>
+                    <% let content = data.konten %>
+                    <div class="carousel-item <% if (counter <= 1) { %> active <% } %>">
+                        <div class="col-md-3 mb-3">
+                            <a href="/promo/<%= data._id %>" style="text-decoration: none">
+                                <div class="card">
+                                    <!-- Promo badge-->
+                                    <div class="badge 
+                                        <% if (data.tipe == "EVENT") { %> bg-danger 
+                                        <% } else if (data.tipe == "E-SPORTS") { %> bg-primary 
+                                        <% } else if (data.tipe == "PROMO") { %> bg-purple
+                                        <% } else if (data.tipe == "PATCH") { %> bg-warning 
+                                        <% } else { %> bg-info <% } %>
+                                        badge-card text-white position-absolute">
+                                        <span><%= data.tipe %></span>
+                                    </div>
+                                    <div class="card-image">
+                                        <img class="img-carousel w-100 h-100" src="<%= data.thumbnail %>" alt="..." />
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="small text-uppercase fw-bold text-muted">Free</div>
+                                        <div class="mb-3">
+                                            <span class="fw-bold"><%= data.judul %></span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="text-muted">
+                                                <%= content.substring(0, 50) %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    <!-- <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                    </div> -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <% counter++ %>
+                <% }) %>
+            <% } %>
+        </div>
+        <!-- <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-bs-slide="prev">
+            <img src="/assets/images/icon/31. left.png">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#recipeCarousel" role="button" data-bs-slide="next">
+            <img src="/assets/images/icon/31. right.png">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a> -->
+    </div>
+</div>

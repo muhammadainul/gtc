@@ -1,0 +1,64 @@
+<div class="row">
+    <!-- <div class="col-lg-6 mt-5">
+        <div class="p-2 col-title-shop mx-auto mb-5">
+            <h5 class="text-danger text-center">BIMBINGAN BELAJAR</h5>
+        </div>
+    </div>
+    <div class="col-lg-6 mt-5">
+        <div class="p-2 col-title-shop mx-auto">
+            <h5 class="text-primary text-center">TRY OUT</h5>
+        </div>
+    </div> -->
+</div>
+<div class="row mb-3">
+    <div class="p-2 mt-5 mx-auto">
+        <select class="form-control" data-live-search="true" id="changeShop">
+            <% if (tryoutData.length != undefined) { %> 
+                <% tryoutData.forEach(row => { %>
+                    <option value="<%= row._id %>" name="<%= row.nama %>"><%= row.nama %></option>
+                <% }) %>
+            <% } else { %>
+                <option value="<%= tryoutData._id %>" name="<%= tryoutData.nama %>"><%= tryoutData.nama %></option>
+            <% } %>
+        </select>
+    </div>  
+</div>
+<div class="row">
+<div class="col-lg-6 mt-5">
+    <div class="p-2 col-title-shop mx-auto mb-5" id="titleShopWide">
+        <h5 class="text-danger text-center">BIMBINGAN BELAJAR</h5>
+    </div>
+</div>
+<div class="col-lg-6 mt-5">
+    <div class="p-2 col-title-shop mx-auto" id="titleShopWide">
+        <h5 class="text-primary text-center">TRY OUT</h5>
+    </div>
+</div>
+<div class="row justify-content-around mx-auto">
+    <div class="col-lg-6" id="titleShopMobile">
+        <div class="p-2 col-title-shop mx-auto mb-3">
+            <h5 class="text-danger text-center">BIMBINGAN BELAJAR</h5>
+        </div>
+    </div>
+    <div class="col-lg-5 box-white mb-5">
+        <div class="d-flex flex-column mt-5 align-items-center" id="listShop">
+            
+        </div>
+    </div>
+    <div class="col-lg-6 mt-2 mb-3" id="titleShopMobile">
+        <div class="p-2 col-title-shop mx-auto">
+            <h5 class="text-primary text-center">TRY OUT</h5>
+        </div>
+    </div>
+    <div class="col-lg-5 box-white mb-5">
+        <div class="d-flex flex-column mt-5 align-items-center" id="listShopBimbel">
+            
+        </div>
+    </div>
+</div>
+
+<%- include('../../modals/shop/paket.ejs') %>
+
+<%- include('../../modals/shop/order.ejs') %>
+
+<%- include('../../modals/shop/konfirmasi.ejs') %>

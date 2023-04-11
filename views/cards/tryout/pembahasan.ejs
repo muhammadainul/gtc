@@ -1,0 +1,47 @@
+<div class="col-lg-12 mt-5 mb-5">
+    <div class="d-flex flex-row justify-content-between w-100">
+        <div class="p-1">
+            <a id="backTryoutPembahasan" style="cursor: pointer;">
+                <img width="40px" src="/assets/images/icon/31. left.png">
+                <span class="text-warning">KEMBALI</span>
+            </a>
+        </div>
+        <div class="p-2 col-title mx-auto">
+            <h5 class="text-brown text-center title-test" id="titleTryoutPembahasan"></h5>
+        </div>
+        <div class="p-1 col-player-name">
+            <span class="text-white text-upper text-center">
+                <%= typeof session.username != undefined ? session.username : '' %>
+            </span>
+        </div> 
+    </div>
+    <div class="container tryout-pembahasan-page mt-5" id="tryoutPembahasanPage">
+        <div class="row mb-2 answer-test d-flex flex-row justify-content-between" id="answerTest">
+                                
+        </div>
+    </div> 
+    <div class="container mt-5" id="boxBottomPembahasanTryout">
+         <div class="d-flex flex-row justify-content-between mx-auto w-100">
+            <div class="p-2">
+                <img src="/assets/images/icon/setting.png">
+            </div>
+            <div class="text-center d-flex flex-row">
+                <div class="p-2">
+                    <a class="bg-transparent mr-3" id="previousTryoutPembahasan" type="button">
+                        <img width="35px" src="/assets/images/icon/31. left.png">
+                    </a>
+                </div>
+                <div class="p-2 text-center" id="boxNumberTryPembahasan">
+                </div>
+                <div class="p-2">
+                    <a class="bg-transparent ml-3" id="nextTryoutPembahasan" type="button">
+                        <img width="35px" src="/assets/images/icon/31. right.png">
+                    </a>
+                </div>
+            </div>
+            <div class="p-2 float-right">
+                <button type="button" id="btnFinish" class="btn btn-warning">SELESAI</button>
+            </div>
+        </div>
+    </div>
+</div>

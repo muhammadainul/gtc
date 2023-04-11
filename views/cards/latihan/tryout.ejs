@@ -1,0 +1,16 @@
+<div class="col-lg-6 mt-5 mb-5">
+    <div class="p-2 col-title mx-auto">
+        <h5 class="text-brown text-bold text-center">LATIHAN TRY OUT</h5>
+    </div>
+    <div class="container mt-5 text-center">
+        <% kategoryTryout.forEach(data => { %>
+            <div class="row m-5">
+                <div class="col-lg-12 box-test">
+                    <a class="nav-link" href="/latihan/kategori/tryout/<%= data._id %>">
+                        <span class="text-warning text-bold"><%= data.nama %></span>
+                    </a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>

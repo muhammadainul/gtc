@@ -1,0 +1,28 @@
+<div class="col-lg-8 mt-5 mb-5">
+    <div class="p-2 col-title mx-auto">
+        <h5 class="text-brown text-bold text-center">VIDEO TIPS TRICK</h5>
+    </div>
+    <div class="container box-white mt-5">
+        <div class="row mt-5 text-center">
+            <% videoMateri.forEach(data => { %>
+                <div class="col-lg-3 mb-2">
+                    <a href="<%= data.contentlink %>" target="_blank" data-id="<%= data._id %>" type="button" class="btn btn-dark readContent">
+                        <img width="30px"src="<%= data.thumbnail %>">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <span class="text-white" style="font-size: 13px;"><%= data.nama %></span>
+                </div>
+                <div class="col-lg-3">
+                    <% if (data.read == false) { %>
+                         <i class="fa fa-check-circle fa-2x text-white"></i>
+                    <% } else { %>
+                        <img width="30px" src="/assets/images/icon/12. sudah di tonton.png">
+                    <% } %>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+    <%- include('../../modals/video/materi/index') %>

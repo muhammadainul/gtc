@@ -1,0 +1,19 @@
+<div class="col-lg-6 mt-5 mb-5">
+    <div class="p-2 col-title mx-auto">
+        <h5 class="text-brown text-bold text-center">LATIHAN PER BAB</h5>
+    </div>
+    <div class="container mt-5 text-center" id="latihanList">
+        <% result.forEach(data => { %>
+            <div class="latihan-list row m-5">
+                <div class="col-lg-12 box-test">
+                    <a class="nav-link" href="/latihan/kategori/bab/<%= data._id %>">
+                        <span class="text-warning text-bold"><%= data.nama %></span>
+                    </a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    <!-- <div id='content-pager' class='loadmore'>
+        <a class='loadmore-btn'>Load More</a>
+    </div> -->
+</div>

@@ -1,0 +1,50 @@
+<div class="col-lg-12 mt-5 mb-5">
+    <div class="d-flex flex-row justify-content-between w-100">
+        <div class="p-2 bg-warning col-timer">
+            <div class="timer-content text-black text-center">
+                <span class="text-black text-center" id="hours"></span> :
+                <span class="text-black text-center" id="minutes"></span> :
+                <span class="text-black text-center" id="seconds"></span>
+            </div>
+        </div>
+        <div class="p-2 col-title mx-auto">
+            <h5 class="text-brown text-bold text-center title-test" id="titleTest"></h5>
+        </div>
+        <div class="p-2 col-player-name">
+            <span class="text-white text-upper text-center">
+                <%= typeof session.username != undefined ? session.username : '' %>
+            </span>
+        </div> 
+    </div>
+    <div class="container latihan-test-page mt-5" id="latihanTestPage">
+        <div class="row mb-2 answer-test d-flex flex-row justify-content-between" id="answerTest">
+                                
+        </div>
+    </div>  
+    <div class="container mt-5">
+         <div class="d-flex flex-row justify-content-between mx-auto w-100">
+            <div class="p-2">
+                <!-- <img src="/assets/images/icon/setting.png"> -->
+            </div>
+            <div class="text-center d-flex flex-row">
+                <div class="p-2">
+                    <a class="bg-transparent mr-3" id="previousTestLatihan" type="button">
+                        <img width="35px" src="/assets/images/icon/31. left.png">
+                        <!-- <span class="sr-only">Previous</span> -->
+                    </a>
+                </div>
+                <div class="p-2 text-center" id="boxNumber">
+                </div>
+                <div class="p-2">
+                    <a class="bg-transparent ml-3" id="nextTestLatihan" type="button">
+                        <img width="35px" src="/assets/images/icon/31. right.png">
+                        <!-- <span class="sr-only">Next</span> -->
+                    </a>
+                </div>
+            </div>
+            <div class="p-2 float-right">
+                <button type="submit" class="btn btn-warning" id="submitLatihan">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

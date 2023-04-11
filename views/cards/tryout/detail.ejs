@@ -1,0 +1,79 @@
+<div class="col-lg-8 mt-5 mb-5">
+    <div class="p-2 col-title mx-auto">
+        <h5 class="text-brown text-center">TRY OUT</h5>
+    </div>
+    <div class="container mt-5" id="listSoalTryout">
+        <% if (tryoutData.response.data.length > 0) { %>
+            <% let count = 0 %>
+            <% if (tryoutData.response.isdoing == false && tryoutData.response.currentTest == tryoutData.response.data.length) { %>
+                <% tryoutData.response.data.forEach(data => { %>
+                    <div class="row m-5">
+                        <div class="col-lg-12 box-white">
+                            <div class="d-flex flex-row">
+                                <div class="col m-3">
+                                    <img width="100px" src="/assets/images/icon/20. latihan perbab.png">
+                                </div>
+                                <div class="col d-flex flex-column m-3">
+                                    <div class="col">
+                                        <h5 class="text-white"><%= data.nama %></h5>
+                                    </div>
+                                    <div class="col d-flex flex-row">
+                                        <div class="col">
+                                            <a class="pembahasan-tryout" style="text-decoration: none;" data-nama="<%= data.nama %>" data-num="<%= count %>" data-id="<%= tryoutData.id %>"
+                                                href="#">
+                                                <span class="text-warning">Pembahasan</span>
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a class="result-test-tryout" data-num="<%= count %>" data-id="<%= tryoutData.id %>"
+                                                style="text-decoration: none;" href="#">
+                                                <span class="text-warning">Hasil Akhir</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% count++ %>
+                <% }) %>
+            <% } else { %>
+                <% tryoutData.response.data.forEach(data => { %>
+                    <div class="row m-5">
+                        <div class="col-lg-12 box-white">
+                            <div class="d-flex flex-row">
+                                <div class="col m-3">
+                                    <img width="100px" src="/assets/images/icon/20. latihan perbab.png">
+                                </div>
+                                <div class="col d-flex flex-column m-3">
+                                    <div class="col">
+                                        <h5 class="text-white"><%= data.nama %></h5>
+                                    </div>
+                                    <div class="col d-flex flex-row">
+                                        <div class="col d-flex flex-row align-content-between">
+                                            <div class="col">
+                                                <a data-notes="<%= data.panduanumum %>" data-num="<%= count %>" 
+                                                data-id="<%= tryoutData.id %>" 
+                                                data-nama="<%= data.nama %>" data-duration="<%= data.duration %>"
+                                                class="btn btn-warning btn-sm text-bold openSoal">Buka Soal</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% count++ %>
+                <% }) %>    
+            <% } %>
+        <% } else { %>
+            <div class="row m-5">
+                <div class="col-lg-12">
+                    <h4 class="text-white">Tidak ada data</h4>
+                </div>
+            </div>
+        <% } %> 
+    </div>
+</div>
+
+<%- include('../../modals/tryout/konfirmasi') %>

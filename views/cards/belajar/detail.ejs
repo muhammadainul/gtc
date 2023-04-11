@@ -1,0 +1,45 @@
+<div class="col-lg-6 mt-5 mb-5">
+    <% if (materiData.length > 0 && materiData !== undefined) { %>
+        <div class="p-2 col-title mx-auto">
+            <h5 class="text-brown text-uppercase text-center">
+                <% let text_name = materiData[0].type.replace('_', ' ') %>
+                <%= text_name %>
+            </h5>
+        </div>
+    <% } else { %>
+        
+    <% } %>
+    <div class="container box-white mt-5 contentMateri">
+        <% if (materiData.length > 0 && materiData !== undefined) { %> 
+            <% materiData.forEach(data => { %>
+                <div class="row mt-5 text-center">
+                    <div class="col mb-2">
+                        <a href="<%= data.contentlink %>" data-id="<%= data._id %>" target="_blank" class="readContent">
+                            <img class="img-thumbnail-viewer" src="<%= data.thumbnail %>" />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <span class="text-warning"><%= data.nama %></span>
+                    </div>
+                    <% if (data.read == false) { %>
+                        <div class="col-lg-3">
+                            <i class="fa fa-check-circle fa-2x text-white"></i>
+                        </div>
+                    <% } else { %>
+                        <div class="col-lg-3">
+                            <img width="30px" src="/assets/images/icon/12. sudah di tonton.png">
+                        </div>
+                    <% } %>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <!-- <div class="container box-white mt-5">
+                <div class="row mt-5 text-center">
+                    <div class="col-lg-12"> -->
+                        <h5 class="text-warning text-center mt-3">Tidak ada data</h5>
+                    <!-- </div>
+                </div>
+            </div> -->
+        <% } %>
+    </div>
+</div>

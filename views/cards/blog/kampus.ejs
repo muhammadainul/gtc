@@ -1,0 +1,33 @@
+<div class="col-lg-6 mt-5 mb-5">
+    <div class="p-2 col-title mx-auto">
+        <h5 class="text-brown text-center">DAFTAR KAMPUS</h5>
+    </div>
+    <div class="container box-white mt-5">
+        <div class="row m-5">
+            <div class="col-lg-12">
+                <table class="table text-white table-borderless table-responsive table-hover table-striped dataTable" id="tableUniv">
+                    <thead>
+                        <tr>
+                            <th>Icon</th>
+                            <th>Univ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <% universitasData.forEach(data => { %>
+                                <tr>
+                                    <td class="col-logo">
+                                        <img width="50px" src="<%= data.logo %>">
+                                        <td class="text-warning">
+                                            <a class="nav-link text-warning" href="/blog/universitas/detail/<%= data._id %>">
+                                                <%= data.nama %>
+                                            </a>
+                                        </td>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

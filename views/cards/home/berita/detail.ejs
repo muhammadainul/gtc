@@ -1,0 +1,152 @@
+<div class="col-lg-12 mt-5 mb-5">
+    <div class="p-2 col-title-shop mx-auto" id="beritaTitle">
+        <h5 class="text-dark text-center"><%= result.judul %></h5>
+    </div>
+    <div class="container mt-5" id="homeContent">
+        <div class="d-flex flex-row justify-content-between large-content" id="mediumContent">
+            <div class="col-lg-3" id="cardContent">
+                <div class="card">
+                    <% let content = result.konten %>
+                    <div class="badge
+                    <% if (result.tipe == "EVENT") { %> bg-danger 
+                        <% } else if (result.tipe == "E-SPORTS") { %> bg-primary 
+                        <% } else if (result.tipe == "PROMO") { %> bg-purple
+                        <% } else if (result.tipe == "PATCH") { %> bg-warning 
+                        <% } else { %> bg-info <% } %>
+                        text-white position-absolute">
+                        <span><%= result.tipe %></span>
+                    </div>
+                    <div class="card-image">
+                        <img class="img-carousel w-100 h-100" src="<%= result.thumbnail %>" alt="..." />
+                    </div>
+                    <div class="card-body">
+                        <div class="small text-uppercase fw-bold text-muted">Free</div>
+                        <div class="mb-3">
+                            <span class="fw-bold"><%= result.judul %></span>
+                        </div>
+                        <div class="content">
+                            <span class="text-muted text-small">
+                                <%= content.substring(0, 50) %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col w-100 text-center" id="contentData">
+                <span class="text-warning"><%= result.konten %></span>
+            </div>
+            <div class="col-lg-3">
+                <div class="d-flex flex-column w-100">
+                <% for (let i = 0; i < beritaData.length; i++) { %>
+                    <% var max_data = 2 %>
+                    <% var count = 0 %>
+                    <% let content = beritaData[i].konten %>
+                    <% if ((i+1) % max_data == 0) { %>
+                        <a type="button" data-id="<%= beritaData[i]._id %>" data-tipe="<%= beritaData[i].tipe %>"
+                            data-thumbnail="<%= beritaData[i].thumbnail %>" data-judul="<%= beritaData[i].judul %>"
+                            data-content="<%= beritaData[i].konten %>" class="actionGetBerita">
+                            <div class="card mb-3">
+                                <div class="badge
+                                <% if (beritaData[i].tipe == "EVENT") { %> bg-danger 
+                                    <% } else if (beritaData[i].tipe == "E-SPORTS") { %> bg-primary 
+                                    <% } else if (beritaData[i].tipe == "PROMO") { %> bg-purple
+                                    <% } else if (beritaData[i].tipe == "PATCH") { %> bg-warning 
+                                    <% } else { %> bg-info <% } %>
+                                    text-white position-absolute">
+                                    <span><%= beritaData[i].tipe %></span>
+                                </div>
+                                <div class="card-image">
+                                    <img class="img-carousel w-100 h-100" src="<%= beritaData[i].thumbnail %>" alt="..." />
+                                </div>
+                                <div class="card-body">
+                                    <div class="small text-uppercase fw-bold text-muted">Free</div>
+                                    <div class="mb-3">
+                                        <span class="fw-bold"><%= beritaData[i].judul %></span>
+                                    </div>
+                                    <div class="content">
+                                        <span class="text-muted text-small">
+                                            <%= content.substring(0, 50) %>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    <% } %>
+                <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-content">
+            <div class="col-lg-3" id="cardContent">
+                <div class="card">
+                    <div class="badge
+                    <% if (result.tipe == "EVENT") { %> bg-danger 
+                        <% } else if (result.tipe == "E-SPORTS") { %> bg-primary 
+                        <% } else if (result.tipe == "PROMO") { %> bg-purple
+                        <% } else if (result.tipe == "PATCH") { %> bg-warning 
+                        <% } else { %> bg-info <% } %>
+                        text-white position-absolute">
+                        <span><%= result.tipe %></span>
+                    </div>
+                    <div class="card-image">
+                        <img class="img-carousel w-100 h-100" src="<%= result.thumbnail %>" alt="..." />
+                    </div>
+                    <div class="card-body">
+                        <div class="small text-uppercase fw-bold text-muted">Free</div>
+                        <div class="mb-3">
+                            <span class="fw-bold"><%= result.judul %></span>
+                        </div>
+                        <div class="content">
+                            <span class="text-muted text-small">
+                                <%= content.substring(0, 50) %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col w-100 text-center mt-2" id="contentData">
+                <span class="text-warning"><%= result.konten %></span>
+            </div>
+            <div class="col-lg-3 mt-5">
+                <div class="d-flex flex-column w-100">
+                <% for (let i = 0; i < beritaData.length; i++) { %>
+                    <% var max_data = 2 %>
+                    <% var count = 0 %>
+                    <% let content = beritaData[i].konten %>
+                    <% if ((i+1) % max_data == 0) { %>
+                        <a type="button" data-id="<%= beritaData[i]._id %>" data-tipe="<%= beritaData[i].tipe %>"
+                            data-thumbnail="<%= beritaData[i].thumbnail %>" data-judul="<%= beritaData[i].judul %>"
+                            data-content="<%= beritaData[i].konten %>" class="actionGetBerita">
+                            <div class="card mb-3">
+                                <div class="badge
+                                <% if (beritaData[i].tipe == "EVENT") { %> bg-danger 
+                                    <% } else if (beritaData[i].tipe == "E-SPORTS") { %> bg-primary 
+                                    <% } else if (beritaData[i].tipe == "PROMO") { %> bg-purple
+                                    <% } else if (beritaData[i].tipe == "PATCH") { %> bg-warning 
+                                    <% } else { %> bg-info <% } %>
+                                    text-white position-absolute">
+                                    <span><%= beritaData[i].tipe %></span>
+                                </div>
+                                <div class="card-image">
+                                    <img class="img-carousel w-100 h-100" src="<%= beritaData[i].thumbnail %>" alt="..." />
+                                </div>
+                                <div class="card-body">
+                                    <div class="small text-uppercase fw-bold text-muted">Free</div>
+                                    <div class="mb-3">
+                                        <span class="fw-bold"><%= beritaData[i].judul %></span>
+                                    </div>
+                                    <div class="content">
+                                        <span class="text-muted text-small">
+                                            <%= content.substring(0, 50) %>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    <% } %>
+                <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

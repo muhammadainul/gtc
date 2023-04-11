@@ -1,0 +1,48 @@
+<%- include('../../navigation/header') %>
+
+    <div class="wrapper-content-home" id="listLatihanPage">
+        <section class="bg-transparent">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <%- include('../../cards/latihan/list') %>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <%- include('../../cards/home/home-menu-bottom') %>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrapper-content-home d-none" id="startSoalLatihan">
+        <section class="bg-transparent">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <%- include('../../cards/latihan/list-soal') %>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrapper-content-home d-none" id="resultSoalLatihan">
+        <section class="bg-transparent">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <%- include('../../cards/latihan/result') %>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrapper-content-home d-none" id="pembahasanLatihan">
+        <section class="bg-transparent">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <%- include('../../cards/latihan/pembahasan') %>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <%- include('../../footer/index') %>

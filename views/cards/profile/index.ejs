@@ -1,0 +1,60 @@
+<div class="col-lg-8 box-white mt-5 mb-5">
+    <div class="d-flex flex-column mt-5 p-3">
+        <div class="mt-4">
+            <h5 class="text-warning">STATUS BERLANGGANAN</h5>
+            <div class="d-flex flex-col w-100">
+                <div class="p-1">
+                    <i class="fa fa-lock fa-3x text-white"></i>
+                </div>
+                <div class="col">
+                    <h5 style="color: orange;">TRIAL</h5>
+                    <span class="text-white">Aktif hingga: <br>
+                       Wed Jul 01 2020 17:00:02 GMT+07.00 WIB 
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <h5 class="text-warning text-bold">KODE REFERAL</h5>
+            <input type="text" class="form-control" name="kode" id="kode" value="P3MNXL">
+            <i class="fa fa-share text-white"></i><span class="text-white">Bagikan kode referal ini ke teman-temanmu dan dapatkan
+                berbagai keuntungan
+            </span>
+        </div>
+        <div class="mt-4">
+            <h5 class="text-warning text-bold">DATA PRIBADI</h5>
+            <span style="color: #F0E8B2 ;">NAMA LENGKAP</span>
+            <br>
+            <span class="text-white"><%= typeof session.namalengkap != undefined ? session.namalengkap : '' %></span>
+        </div>
+        <div class="mt-4">
+            <span style="color: #F0E8B2 ;">EMAIL</span>
+            <br>
+            <span class="text-white"><%= typeof session.email != undefined ? session.email : '' %></span>
+        </div>
+        <div class="mt-4">
+            <span style="color: #F0E8B2 ;">JENIS KELAMIN</span>
+            <br>
+            <span class="text-white"><% if (session.jeniskelamin == 'L') { %> Laki-Laki <% } else { %> Perempuan <% } %></span>
+        </div>
+        <div class="mt-4">
+            <span style="color: #F0E8B2 ;">KELAS</span>
+            <br>
+            <span class="text-white">Guru SD</span>
+        </div>
+        <div class="mt-4">
+            <span style="color: #F0E8B2 ;">SEKOLAH</span>
+            <br>
+            <span class="text-white"><%= typeof session.sekolah != undefined ? session.sekolah : '' %></span>
+        </div>
+        <div class="mt-4">
+            <span style="color: #F0E8B2 ;">PROVINSI</span>
+            <br>
+            <span class="text-white"><%= typeof session.provinsi != undefined ? session.provinsi : '' %></span>
+        </div>
+        <div class="mt-4">
+            <span style="color: #F0E8B2 ;">KOTA</span><br>
+            <span class="text-white"><%= typeof session.kabupaten != undefined ? session.kabupaten : '' %></span>
+        </div>
+    </div>
+</div>

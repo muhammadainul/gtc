@@ -1,0 +1,85 @@
+<%- include('./index') %>
+		<!-- Header-->
+		<header class="bg-header mt-5">
+            <div class="container px-5">
+                <div class="row d-flex flex-row justify-content-center">
+                    <div class="col-lg-2 mt-5 box-carousel">
+                        <% if (typeof infoKiri !== 'undefined') { %>
+                            <% infoKiri.forEach(data => { %>
+                                <h5 class="text-white"><%= data.judul %></h5>
+                                <span class="text-white text-small"><%= data.deskripsi %></span>
+                            <% }) %>
+                        <% } %>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="text-center my-5">
+                            <h1 class="text-center text-white">SELAMAT DATANG DI<br> GTC EDUCATION</h1>
+                            <!-- <img class="img-thumbnail" src="/assets/images/icon/iklan1.png"> -->
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <% if (carouselData != undefined && carouselData != null) { %>
+                                        <% for (let i=1; i < carouselData.length; i++) { %>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>"></li>
+                                        <% } %>
+                                    <% } %>
+                                    
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <% if (carouselData != undefined && carouselData != null) { %>
+                                        <% var counter = 1 %>
+                                        <% carouselData.forEach(data => { %>
+                                            <div class="carousel-item card-carousel <% if (counter <= 1) { %> active <% } %>">
+                                                <img class="d-block w-100 h-100" src="<%= data.cover %>" alt="slide">
+                                            </div>
+                                            <% counter++ %>
+                                        <% }) %>
+                                    <% } else { %>
+                                        <div class="carousel-item card-carousel">
+                                            <h4 class="text-white">Tidak ada data</h4>
+                                        </div>
+                                    <% } %>
+                                </div>
+                                <a class="carousel-control-prev-card" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <i class="fa fa-arrow-alt-circle-left fa-2x fa-pull-left"></i>
+                                    <!-- <img src="/assets/images/icon/31. left.png"> -->
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next-card" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                    <i class="fa fa-arrow-alt-circle-right fa-2x fa-pull-right"></i>
+                                    <!-- <img src="/assets/images/icon/31. right.png"> -->
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 mt-5 box-carousel">
+                        <% if (infoKanan !== undefined && infoKanan !== null) { %>
+                            <% infoKanan.forEach(data => { %>
+                                <h5 class="text-white"><%= data.judul %></h5>
+                                <span class="text-white text-small"><%= data.deskripsi %></span>
+                            <% }) %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-12 d-flex flex-row">
+                        <div class="p-2">
+                            <a href="https://www.facebook.com/gtc.edu.7/"><img class="img-fluid" src="/assets/images/icon/icon_fb.png"></a>
+                        </div>
+                        <div class="p-2">
+                            <a href="https://www.instagram.com/gtc_edu/"><img class="img-fluid" src="/assets/images/icon/icon_ig.png"></a>
+                        </div>
+                        <div class="p-2">
+                            <a href="https://twitter.com/GtcEdu"><img class="img-fluid" src="/assets/images/icon/icon_twitter.png"></a>
+                        </div>
+                        <div class="p-2">
+                            <a href="https://www.youtube.com/channel/UCOpzKNA7hgcyvDN-tYaX5DQ"><img class="img-fluid" src="/assets/images/icon/icon_yt.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-5">
+                
+            </div>
+		</header>
